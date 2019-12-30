@@ -8,14 +8,14 @@ public class BestTime2SellStocks1{
            return max; 
         }
         int minStock = A.get(0);
-        int[] cache = new int[A.size()];
-        cache[0] = 0;
+        int[] profit = new int[A.size()];
+        profit[0] = 0;
         for(int b=1; b<A.size(); b++){
             // stock price increase wrt min stock
             //if(A.get(b) > A.get(b-1)){
                 // Update the profit in the cache
-                if(A.get(b)-minStock > cache[b-1]){
-                    cache[b] = A.get(b)-minStock;
+                if(A.get(b)-minStock > profit[b-1]){
+                    profit[b] = A.get(b)-minStock;
                     continue;
                 }
             //}
@@ -25,10 +25,10 @@ public class BestTime2SellStocks1{
             }
 
             // Carying profits 
-            cache[b] = cache[b-1];
+            profit[b] = profit[b-1];
         }
         
-        return cache[A.size()-1];
+        return profit[A.size()-1];
     }
 
     public static void main(String[] args){
