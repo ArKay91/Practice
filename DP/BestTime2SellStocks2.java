@@ -7,10 +7,12 @@ public class BestTime2SellStocks2{
         profit[0] = 0;
         //Looping through the stocks
         for(int b=1; b<A.size();b++){
+            // Updating Stock profit every increasing day in sequence 
             while(b < A.size() && A.get(b) >= A.get(b-1)){
                 profit[b] = profit[b-1] + (long)(A.get(b) - A.get(b-1));
                 b++;
             }
+            // Before going to next day transaction update the profit with previous profit.
             if(b < A.size()){
                 profit[b] = profit[b-1];
             }
