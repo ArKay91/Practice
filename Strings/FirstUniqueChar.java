@@ -11,7 +11,7 @@ public class FirstUniqueChar{
             if(map[c-'a'] == 1) return i;
             i++;
         }
-
+        
         return -1;
     }
 
