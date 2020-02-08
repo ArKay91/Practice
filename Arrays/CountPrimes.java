@@ -6,8 +6,10 @@ public class CountPrimes{
         for(int i=0; i<n; i++){
             isPrime[i] = true;
         }
+        // Since we dont want to search for numbers greater than its square if total numbers are less than that.
         for(int i=2; i*i<n; i++){
             if(isPrime[i]){
+                
                 for(int j=i; j*i < n; j++){
                     isPrime[i*j] = false;
                 }
