@@ -9,6 +9,7 @@ public class MeetingRooms{
     }    
     public int minMeetingRooms(int[][] intervals){
         Arrays.sort(intervals, new IntervalComparator());
+        // Here we are merge all individual meetings in priority queue which size should give min.
         PriorityQueue<int[]> pq = new PriorityQueue<>((x, y) -> x[1]-y[1]);
         pq.add(intervals[0]);
         for(int i=1; i<intervals.length; i++){
