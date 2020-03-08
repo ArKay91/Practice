@@ -12,30 +12,47 @@ public class ReOrderList{
 
     }
 
-    public void reOList(ListNode head){
-        if(head == null){
-            return;
+    public void reOList(ListNode head) {
+        if (head == null) return;
+        int size = size(head);
+        if (size == 1) return;
+        
+        // Split list into two halves. Head and Tail.
+        int half = size/2 + size%2;
+        ListNode tail = head;
+        ListNode headLast = head;
+        for (int i=0; i<half; i++) {
+            headLast = tail;
+            tail = tail.next;
         }
-        ListNode fastPointer = head;
-        ListNode slowPointer = head;
+        headLast.next = null;
         
-        while(fastPointer != null && fastPointer.next != null){
-            fastPointer = fastPointer.next.next;
-            slowPointer = slowPointer.next;
+        // Reverse tails order
+        // and do final merge
+        tail = reverse(tail);
+        merge(head, tail);
+    }
+    
+    private int size(ListNode head) {
+        int size = 0;
+        while(head != null) {
+            size++ ;
+            head = head.next;
         }
-        
-        ListNode newList = reverse(slowPointer.next);
-        slowPointer.next = null;
-        slowPointer = head;
-        
-        ListNode next = null;
-        
-        while(newList != null){
-            next = newList.next;
-            newList.next = slowPointer.next;
-            slowPointer.next = newList;
-            newList = next;
-            slowPointer = slowPointer.next.next;
+        return size;
+    }
+    
+    private void merge(ListNode head, ListNode tail) {
+        ListNode nextHead;
+        while ((nextHead = head.next) != null) {
+            ListNode nextTail = tail.next;
+            head.next = tail;
+            tail.next = nextHead;
+            head = nextHead;
+            tail = nextTail;
+        }
+        if (tail != null) {
+            head.next = tail;
         }
     }
 
@@ -55,23 +72,6 @@ public class ReOrderList{
     }
 
     public static void main(String[] args){
-        ListNode head = new ListNode(1);
-        ListNode temp = head;
-        temp.next = new ListNode(2);
-        temp = temp.next;
-        temp.next = new ListNode(3);
-        temp = temp.next;
-        temp.next = new ListNode(4);
-        temp = temp.next;
-        temp.next = new ListNode(5);
-        temp = temp.next;
-
-        ReOrderList rOL = new ReOrderList();
-        rOL.reOList(head);
-
-        while(head != null){
-            System.out.println(head.val);
-            head = head.next;
-        }
+        
     }
 }
