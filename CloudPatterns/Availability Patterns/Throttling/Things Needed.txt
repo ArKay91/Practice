@@ -1,0 +1,5 @@
+AWS Account
+AWS SDK
+Java or C# .. ?
+Design of throttle system
+Deployment.. ?
