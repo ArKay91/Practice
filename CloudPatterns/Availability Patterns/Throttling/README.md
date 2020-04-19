@@ -1,6 +1,6 @@
 # Throttling Scenario
 
-Throttling pattern focus on the controlled consumption of resources used by an instance of an application, an individual tenant or an entire service.
+Throttling pattern focus on the controlled consumption of resources used by an instance of an application, an individual tenant or an entire service. SLA can be maintained even with an increase in demand placed on resources.
 
 Varying load overtime on an app can be from various reason
 
@@ -8,4 +8,10 @@ Varying load overtime on an app can be from various reason
 * Type of activity done by users
 * Expensive computational task
 
-This araises a situation when processing requirements of the system **exceeds** the capacity of the resources available resulting in poor performance and even failure. 
+This araises a situation when processing requirements of the system **exceeds** the capacity of the resources available resulting in poor performance and even failure. Chances of not meeting SLA's.
+
+### Strategy depending on busines goals
+
+* Auto scalling to match the provisioned resources to the user at any given time.
+    - Can consitently meet user demand by optimizing running costs.
+    - Auto scaling is not immediate if demand grows quickly there is a chance of resource defecit.
