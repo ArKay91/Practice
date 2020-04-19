@@ -8,15 +8,17 @@ Varying load overtime on an app can be from various reason
 * Type of activity done by users
 * Expensive computational task
 
+## Problem
+
 This arises a situation when processing requirements of the system **exceeds** the capacity of the resources available resulting in poor performance and even failure. Chances of not meeting SLA's.
+
+## Solution
 
 ### Strategy depending on business goals
 
 * Auto scaling to match the provisioned resources to the user at any given time.
     - Can consistently meet user demand by optimizing running costs.
     - Auto scaling can trigger the provisioning of additional resource and is not immediate. If demand grows quickly there is a chance of resource deficit.
-
-## Solution
 
 Extending the auto scaling feature we could impose a limit on resources to be used for every application, and throttle them when limit is reached. Throttle requests when usage exceeds threshold will enable systems to continue functioning and meet SLA's. Monitoring resource usage from a system can be helpful to achieve metrics.
 
