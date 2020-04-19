@@ -14,4 +14,4 @@ This araises a situation when processing requirements of the system **exceeds** 
 
 * Auto scalling to match the provisioned resources to the user at any given time.
     - Can consitently meet user demand by optimizing running costs.
-    - Auto scaling is not immediate if demand grows quickly there is a chance of resource defecit.
+    - Auto scaling can trigger the provisioning of additional resource and is not immediate. If demand grows quickly there is a chance of resource deficit.
