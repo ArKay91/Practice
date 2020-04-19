@@ -8,10 +8,10 @@ Varying load overtime on an app can be from various reason
 * Type of activity done by users
 * Expensive computational task
 
-This araises a situation when processing requirements of the system **exceeds** the capacity of the resources available resulting in poor performance and even failure. Chances of not meeting SLA's.
+This arises a situation when processing requirements of the system **exceeds** the capacity of the resources available resulting in poor performance and even failure. Chances of not meeting SLA's.
 
-### Strategy depending on busines goals
+### Strategy depending on business goals
 
-* Auto scalling to match the provisioned resources to the user at any given time.
-    - Can consitently meet user demand by optimizing running costs.
+* Auto scaling to match the provisioned resources to the user at any given time.
+    - Can consistently meet user demand by optimizing running costs.
     - Auto scaling can trigger the provisioning of additional resource and is not immediate. If demand grows quickly there is a chance of resource deficit.
